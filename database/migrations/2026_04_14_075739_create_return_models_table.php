@@ -18,6 +18,7 @@ return new class extends Migration
 
             $table->boolean('charge')->default(false);
             $table->integer('amount')->nullable();
+            $table->timestamps();
         });
     }
 

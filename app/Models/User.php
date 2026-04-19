@@ -29,4 +29,23 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    protected $primaryKey = 'npm';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
+    public function loans()
+    {
+        return $this->hasMany(Loan::class, 'user_npm', 'npm');
+    }
+
+    protected $fillable = [
+        'npm',
+        'username',
+        'first_name',
+        'last_name',
+        'email',
+        'password'
+    ];
 }
+
